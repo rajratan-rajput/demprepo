@@ -6,7 +6,8 @@ pipeline {
          {            
                  steps {
                         echo "Cloning the repository..."                
-                         git branch: 'master', url: 'https://github.com/kylhgr/Hello-World-Python.git'                             	}        
+                         git branch: 'main', url: 'https://github.com/rajratan-rajput/demprepo.git
+'                             	}        
          }        
          stage('Build') {            
                  steps {  echo "Build step (simulated)...“   }        
