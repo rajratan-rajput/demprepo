@@ -1,29 +1,24 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Checkout') {
-            steps {
-                echo 'Checking out code'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                echo 'Build stage running'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Test stage running'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploy stage running'
-            }
-        }
-    }
-}
+pipeline {    
+      agent any    
+        
+       stages {        
+         stage('Checkout') 
+         {            
+                 steps {
+                        echo "Cloning the repository..."                
+                         git branch: 'master', url: 'https://github.com/kylhgr/Hello-World-Python.git'                             	}        
+         }        
+         stage('Build') {            
+                 steps {  echo "Build step (simulated)...“   }        
+         }        
+        stage('Test') {            
+                 steps {  echo "Test step (simulated)..."     }        
+        }         
+       stage('Deploy') {           
+                   steps { echo "Deploy step (simulated)..."   }        
+        }    
+     }   //close stages 
+     post {      success {            echo "Pipeline succeeded!"        }        
+                    failure {            echo "Pipeline failed!"        }    
+             }
+ } //close pipeline
